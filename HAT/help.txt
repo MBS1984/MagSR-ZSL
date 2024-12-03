@@ -1,0 +1,5 @@
+For executing in command prompt:
+
+(pytorch_venv) C:\Users\mbava\Downloads\HAT-main>python hat/test.py -opt options/test/HAT-L_SRx4_ImageNet-pretrain.yml
+
+- python -m torch.distributed.launch --nproc_per_node=8 --master_port=4321 hat/train.py -opt options/train/train_HAT_SRx2_from_scratch.yml --launcher pytorch
