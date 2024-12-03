@@ -1,0 +1,44 @@
+name: test_Real_SRResNetx4_reg
+model_type: SRModel
+scale: 4
+num_gpu: 1  # set num_gpu: 0 for cpu mode
+manual_seed: 0
+
+# network structures
+network_g:
+  type: MSRResNet_detailss
+  num_in_ch: 3
+  num_out_ch: 3
+  num_feat: 64
+  num_block: 16
+  upscale: 4
+
+# path
+path:
+  pretrain_network_g: C:\Users\mbava\Downloads\Simple-Align-main\realesrgan\Real-SRResNet_simple_align.pth
+  strict_load_g: true
+
+# validation settings
+val:
+  save_img: true
+  suffix: ~  # add suffix to saved images, if None, use exp name
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 4
+      test_y_channel: false
+
+
+datasets:
+
+  test_01:  # the 1st test dataset
+    name: Set5_bicubic
+    type: PairedImageDataset
+    dataroot_gt: /benchmark/Set5
+    dataroot_lq: /dataset/benchmark/Set5/LR_degra/bicubic
+    #filename_tmpl: '{}x4'
+    io_backend:
+      type: disk
+
+
