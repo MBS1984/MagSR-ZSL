@@ -1,0 +1,496 @@
+2024-11-28 16:44:14,620 INFO: 
+                ____                _       _____  ____
+               / __ ) ____ _ _____ (_)_____/ ___/ / __ \
+              / __  |/ __ `// ___// // ___/\__ \ / /_/ /
+             / /_/ // /_/ /(__  )/ // /__ ___/ // _, _/
+            /_____/ \__,_//____//_/ \___//____//_/ |_|
+     ______                   __   __                 __      __
+    / ____/____   ____   ____/ /  / /   __  __ _____ / /__   / /
+   / / __ / __ \ / __ \ / __  /  / /   / / / // ___// //_/  / /
+  / /_/ // /_/ // /_/ // /_/ /  / /___/ /_/ // /__ / /<    /_/
+  \____/ \____/ \____/ \____/  /_____/\____/ \___//_/|_|  (_)
+    
+Version Information: 
+	BasicSR: 1.3.4.9
+	PyTorch: 2.4.0
+	TorchVision: 0.19.0
+2024-11-28 16:44:14,620 INFO: 
+  name: test_Real_RRDBNetx4
+  model_type: SRModel
+  scale: 4
+  num_gpu: 1
+  manual_seed: 0
+  network_g:[
+    type: RRDBNet
+    num_in_ch: 3
+    num_out_ch: 3
+    num_feat: 64
+    num_block: 23
+    num_grow_ch: 32
+  ]
+  path:[
+    pretrain_network_g: /data0/xtkong/Reflash-Dropout-github/Real-train/pretrained_model/Real-RRDB.pth
+    strict_load_g: True
+    results_root: C:\Users\mbava\Downloads\RDSR-main\results\test_Real_RRDBNetx4
+    log: C:\Users\mbava\Downloads\RDSR-main\results\test_Real_RRDBNetx4
+    visualization: C:\Users\mbava\Downloads\RDSR-main\results\test_Real_RRDBNetx4\visualization
+  ]
+  val:[
+    save_img: True
+    suffix: None
+    metrics:[
+      psnr:[
+        type: calculate_psnr
+        crop_border: 4
+        test_y_channel: False
+      ]
+    ]
+  ]
+  datasets:[
+    test_01:[
+      name: Set5_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_02:[
+      name: Set14_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_03:[
+      name: BSD100_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_04:[
+      name: Manga109_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_05:[
+      name: Urban100_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_06:[
+      name: Set5_blur2_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/blur2_bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_07:[
+      name: Set14_blur2_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/blur2_bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_08:[
+      name: BSD100_blur2_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/blur2_bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_09:[
+      name: Manga109_blur2_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/blur2_bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_10:[
+      name: Urban100_blur2_bicubic
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/blur2_bicubic
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_11:[
+      name: Set5_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_12:[
+      name: Set14_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_13:[
+      name: BSD100_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_14:[
+      name: Manga109_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_15:[
+      name: Urban100_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_16:[
+      name: Set5_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_17:[
+      name: Set14_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_18:[
+      name: BSD100_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_19:[
+      name: Manga109_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_20:[
+      name: Urban100_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_21:[
+      name: Set5_blur2_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/blur2_bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_22:[
+      name: Set14_blur2_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/blur2_bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_23:[
+      name: BSD100_blur2_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/blur2_bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_24:[
+      name: Manga109_blur2_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/blur2_bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_25:[
+      name: Urban100_blur2_bicubic_noise20
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/blur2_bicubic_noise20
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_26:[
+      name: Set5_blur2_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/blur2_bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_27:[
+      name: Set14_blur2_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/blur2_bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_28:[
+      name: BSD100_blur2_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/blur2_bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_29:[
+      name: Manga109_blur2_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/blur2_bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_30:[
+      name: Urban100_blur2_bicubic_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/blur2_bicubic_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_31:[
+      name: Set5_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_32:[
+      name: Set14_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_33:[
+      name: BSD100_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_34:[
+      name: Manga109_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_35:[
+      name: Urban100_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_36:[
+      name: Set5_blur2_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set5/LR_degra/blur2_bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_37:[
+      name: Set14_blur2_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Set14/LR_degra/blur2_bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_38:[
+      name: BSD100_blur2_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/B100/LR_degra/blur2_bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_39:[
+      name: Manga109_blur2_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Manga109/LR_degra/blur2_bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+    test_40:[
+      name: Urban100_blur2_bicubic_noise20_jepg50
+      type: PairedImageDataset
+      dataroot_gt: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/HR/x4
+      dataroot_lq: /data0/xtkong/Reflash-Dropout-github/dataset/benchmark/Urban100/LR_degra/blur2_bicubic_noise20_jepg50
+      io_backend:[
+        type: disk
+      ]
+      phase: test
+      scale: 4
+    ]
+  ]
+  dist: False
+  rank: 0
+  world_size: 1
+  auto_resume: False
+  is_train: False
+
