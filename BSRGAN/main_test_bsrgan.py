@@ -42,7 +42,7 @@ def main():
 #    print(torch.backends.cudnn.version())  # cudnn version
 
     testsets = 'testsets'       # fixed, set path of testsets
-    testset_Ls = ['RealSRSet']  # ['RealSRSet','DPED']
+    testset_Ls = ['']  # ['RealSRSet','DPED']
 
     model_names = ['RRDB','ESRGAN','FSSR_DPED','FSSR_JPEG','RealSR_DPED','RealSR_JPEG']
     model_names = ['BSRGAN']    # 'BSRGANx2' for scale factor 2
