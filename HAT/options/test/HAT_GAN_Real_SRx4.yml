@@ -39,7 +39,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: ./experiments/pretrained_models/Real_HAT_GAN_sharper.pth
+  pretrain_network_g: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/HAT/experiments/pretrained_model/Real_HAT_GAN_sharper.pth
   strict_load_g: true
   param_key_g: 'params_ema'
   results: ./results  # Add this line
