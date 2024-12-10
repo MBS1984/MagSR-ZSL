@@ -13,7 +13,7 @@ datasets:
     name: custom
     #name: 
     type: SingleImageDataset
-    dataroot_lq: C:\Users\mbava\Downloads\HAT-main\datasets\
+    dataroot_lq: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/HAT/testsets
     io_backend:
       type: disk
 
