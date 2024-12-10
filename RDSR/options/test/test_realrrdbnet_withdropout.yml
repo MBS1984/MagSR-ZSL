@@ -34,7 +34,7 @@ val:
 datasets:
 
   test_01:  # the 1st test dataset
-    name: Set5_bicubic
+    name: sr
     type: PairedImageDataset
     dataroot_gt: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/RDSR/testsets
     dataroot_lq: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/RDSR/testsets
