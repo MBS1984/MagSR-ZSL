@@ -15,7 +15,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: C:\Users\mbava\Downloads\Simple-Align-main\code\Real-SRResNet_simple_align.pth
+  pretrain_network_g: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/Simple-Align\code\Real-SRResNet_simple_align.pth
   strict_load_g: true
 
 # validation settings
@@ -35,8 +35,8 @@ datasets:
   test_01:  # the 1st test dataset
     name: Set5_bicubic
     type: PairedImageDataset
-    dataroot_gt: C:\Users\mbava\Downloads\Simple-Align-main\dataset\x4
-    dataroot_lq: C:\Users\mbava\Downloads\Simple-Align-main\dataset\LR_degra
+    dataroot_gt: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/Simple-Align/testsets
+    dataroot_lq: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/Simple-Align/testsets
     #filename_tmpl: '{}x4'
     io_backend:
       type: disk
