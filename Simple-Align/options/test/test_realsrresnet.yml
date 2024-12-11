@@ -15,7 +15,7 @@ network_g:
 
 # path
 path:
-  pretrain_network_g: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/Simple-Align\code\Real-SRResNet_simple_align.pth
+  pretrain_network_g: /content/drive/MyDrive/Colab Notebooks/SR/MagSR-ZSL/Simple-Align/realesrgan/pretrained_models/Real-SRResNet_simple_align.pth
   strict_load_g: true
 
 # validation settings
